@@ -177,6 +177,7 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .icon-phone-envelope {
@@ -338,6 +339,35 @@ img {
     padding-bottom: 94px;    
 }
 
+.examples .examples-img {
+    position: relative;
+}
+
+.examples-overlay {
+    position:absolute;
+    
+    width: 370px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 27px 107px;
+    bottom: 0;    
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
+.examples-text {
+    font-family: 'Roboto';
+  
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white-text-color);
+}
+
 .experts {
     display: flex;
     flex-wrap: wrap; 
@@ -349,7 +379,6 @@ img {
     margin-right: 30px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;  
-    
 }
 
 
@@ -375,6 +404,9 @@ img {
     align-items: center;
     justify-content: center;
     color: #AFB1B8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .team-link .icon {
     fill: currentColor;
@@ -411,19 +443,18 @@ img {
     align-items: center;
     justify-content: center;
     color: #AFB1B8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
 }
 .constant-link .icon {
     fill: currentColor;
 }
 
-.constant-link:hover {
+.constant-link:hover,
+.constant-link:focus {
     color:var(--accent-color);
     border: 1px solid var(--accent-color);
 }
-.constant-link:focus {
-    color: var(--accent-color);
-    border: var(--accent-color);
-}
+
 
 .section-clients {
     display: flex;
@@ -475,6 +506,8 @@ img {
     font-size: 14px;
     line-height: 1.71;
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            
 }
 
 .location .link:hover,
@@ -488,7 +521,9 @@ img {
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
-    text-decoration: none; 
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+           
 }
 
 .location .link-contacts:hover,
@@ -524,6 +559,8 @@ img {
     height: 44px;
     border-radius: 50%;
     color: var(--white-text-color); 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join-link .icon {
     fill: currentColor;
@@ -557,7 +594,10 @@ img {
     cursor: pointer;
     border-radius: 4px;
     border: 1px solid transparent;
-    text-align: center;       
+    text-align: center;  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter .first {
@@ -663,6 +703,10 @@ img {
     transform: translateY(0);
 }
 
+.options .content-link:focus .overlay-wrapp {
+    transform: translateY(0);
+}
+
 .overlay-text {
     font-weight: 400;
     font-size: 18px;
@@ -670,5 +714,57 @@ img {
     letter-spacing: 0.03em;
     color: var(--primary-background-color);
 }
+
+/* Modal */
+
+.backdrop {
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+ 
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+.modal {
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 8px;
+    top: 8px;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: transparent;
+
+}
+
+.close-icon {
+
+}
+
+
 
 
